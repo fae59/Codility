@@ -1,42 +1,39 @@
 #include <stack>
+
 int solution(string &S) {
     // write your code in C++14 (g++ 6.2.0)
-
-    if (S.empty()) {
+    if (S.empty())
         return 1;
-    }
 
-    if(S.size() % 2) {
+    if (S.size() % 2)
         return 0;
-    }
 
-    stack<char> st;
+    stack<char> pilha;
 
-    for (char c : S) {
-        switch (c)
-        {
+    for(char c : S) {
+        switch (c) {
             case '}':
-                if (st.empty() || st.top() != '{')
+                if (pilha.empty() || pilha.top() != '{')
                     return 0;
-                st.pop();
+                pilha.pop();
                 break;
 
             case ']':
-                if (st.empty() || st.top() != '[')
+                if(pilha.empty() || pilha.top() != '[')
                     return 0;
-                st.pop();
+                pilha.pop();
                 break;
 
             case ')':
-                    if (st.empty() || st.top() != '(')
-                        return 0;
-                    st.pop();
-                    break;
+                if(pilha.empty() || pilha.top() != '(')
+                    return 0;
+                pilha.pop();
+                break;
 
             default:
-                st.push(c);
+                pilha.push(c);
         }
     }
 
-    return st.empty() ? 1 : 0;
+    return (pilha.empty() ? 1 : 0);
 }
