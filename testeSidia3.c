@@ -13,5 +13,5 @@ int solution(string S, int k) {
         	//cnt++;
     	//}
 	
-	return ceil((float)N/k);
+	return floor((float)N/k);
 }
