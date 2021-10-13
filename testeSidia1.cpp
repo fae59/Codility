@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 int solution(vector<int> &A) {
     // write your code in C++14 (g++ 6.2.0)
-    vector<int> T{2, -3, 3, 1, 10, 8, 2, 5, 13, -5, 3, -18};
+    //vector<int> T{2, -3, 3, 1, 10, 8, 2, 5, 13, -5, 3, -18};
     const int N = T.size();
     int k = 0;
 
@@ -36,15 +36,15 @@ int solution(vector<int> &A) {
     float avrSummer = summer[summer.size()-1] - summer[0];
     float avrAutumn = autumn[autumn.size()-1] - autumn[0];
 
-    float maxVal = -1;
+    float maxVal = -1.0;
 
     maxVal = max(maxVal, avrWinter);
     maxVal = max(maxVal, avrSpring);
     maxVal = max(maxVal, avrSummer);
     maxVal = max(maxVal, avrAutumn);
 
-    if (maxVal == avrWinter) printf("WINTER");
-    else if (maxVal == avrSpring) printf("SPRING");
-    else if (maxVal == avrSummer) printf("SUMMER");
-    else if (maxVal == avrAutumn) printf("AUTUMN");
+    if (maxVal == avrWinter) return "WINTER";
+    else if (maxVal == avrSpring) return "SPRING";
+    else if (maxVal == avrSummer) return "SUMMER";
+    else if (maxVal == avrAutumn) return "AUTUMN";
 }
